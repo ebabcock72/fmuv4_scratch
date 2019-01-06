@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:fmuv4-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 5
+Sheet 5 6
 Title ""
 Date ""
 Rev ""
@@ -315,4 +316,97 @@ Text Notes 7700 3300 0    50   ~ 0
 TELEM2+OSD
 Text Notes 9350 1050 0    50   ~ 0
 I2C1
+$Comp
+L RF_GPS:ublox_SAM-M8Q U?
+U 1 1 5C316414
+P 2450 6050
+F 0 "U?" H 2100 5600 50  0000 C CNN
+F 1 "ublox_SAM-M8Q" H 2800 5600 50  0000 C CNN
+F 2 "RF_Module:ublox_SAM-M8Q" H 3000 5600 50  0001 C CNN
+F 3 "https://www.u-blox.com/sites/default/files/SAM-M8Q_DataSheet_%28UBX-16012619%29.pdf" H 2450 6050 50  0001 C CNN
+	1    2450 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C316627
+P 2450 6550
+F 0 "#PWR?" H 2450 6300 50  0001 C CNN
+F 1 "GND" H 2455 6377 50  0000 C CNN
+F 2 "" H 2450 6550 50  0001 C CNN
+F 3 "" H 2450 6550 50  0001 C CNN
+	1    2450 6550
+	1    0    0    -1  
+$EndComp
+Text GLabel 3600 5950 2    50   Output ~ 0
+FMU_USART4_RX
+Text GLabel 3600 5850 2    50   Output ~ 0
+FMU_USART4_TX
+$Comp
+L Device:R_US R?
+U 1 1 5C31674C
+P 3250 5850
+F 0 "R?" V 3045 5850 50  0000 C CNN
+F 1 "0" V 3136 5850 50  0000 C CNN
+F 2 "" V 3290 5840 50  0001 C CNN
+F 3 "~" H 3250 5850 50  0001 C CNN
+	1    3250 5850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5C31679A
+P 3250 5950
+F 0 "R?" V 3300 5850 50  0000 C CNN
+F 1 "0" V 3350 6000 50  0000 C CNN
+F 2 "" V 3290 5940 50  0001 C CNN
+F 3 "~" H 3250 5950 50  0001 C CNN
+	1    3250 5950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3400 5850 3600 5850
+Wire Wire Line
+	3400 5950 3600 5950
+Wire Wire Line
+	2950 5850 3100 5850
+Wire Wire Line
+	2950 5950 3100 5950
+Text GLabel 1300 5450 0    50   Input ~ 0
+VDD_3V3_PERIPH
+Wire Wire Line
+	1300 5450 2350 5450
+Wire Wire Line
+	2450 5450 2450 5550
+Wire Wire Line
+	2350 5550 2350 5450
+Connection ~ 2350 5450
+Wire Wire Line
+	2350 5450 2450 5450
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5C31E460
+P 2850 5300
+F 0 "BT?" H 2968 5396 50  0000 L CNN
+F 1 "Battery_Cell" H 2968 5305 50  0000 L CNN
+F 2 "" V 2850 5360 50  0001 C CNN
+F 3 "~" V 2850 5360 50  0001 C CNN
+	1    2850 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 5100 2550 5100
+Wire Wire Line
+	2550 5100 2550 5550
+$Comp
+L power:GND #PWR?
+U 1 1 5C31F208
+P 2850 5400
+F 0 "#PWR?" H 2850 5150 50  0001 C CNN
+F 1 "GND" H 2855 5227 50  0000 C CNN
+F 2 "" H 2850 5400 50  0001 C CNN
+F 3 "" H 2850 5400 50  0001 C CNN
+	1    2850 5400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
